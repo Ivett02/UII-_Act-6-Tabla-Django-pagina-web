@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card p-3">
+  <h4 class="text-danger text-center">Borrar Venta</h4>
+  <div class="card-body text-center">
+    <p>¿Seguro que deseas eliminar la venta <strong>#{{ venta.id_venta }}</strong>?</p>
+    <form method="POST" class="d-inline">
+      {% csrf_token %}
+      <button class="btn btn-danger">Confirmar eliminación</button>
+    </form>
+    <a href="{% url 'ver_ventas' %}" class="btn btn-secondary ms-2">Cancelar</a>
+  </div>
+</div>
+{% endblock %}
